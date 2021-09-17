@@ -12,9 +12,11 @@ ftp.login(user='admin', passwd='0000')
 
 
 # 50g Beanies Gold prog:000
-try:
-    ftp.cwd('/SD2/cv-x/result/SD1_000')
-    ftp.retrlines('LIST')
+
+ftp.cwd("/SD2/cv-x/result/")
+ftp.retrlines('LIST')
+
+"""
 except:
     pass
 
@@ -78,3 +80,4 @@ for l in root_dir:
     #ftp.retrlines('LIST')
 #except:
     #pass
+"""
