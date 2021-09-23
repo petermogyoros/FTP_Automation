@@ -2,9 +2,16 @@ import fnmatch
 import os
 from ftplib import FTP
 
+# Define connection variables
+ip_win = '192.168.3.99'
+ip_linux = '127.1.1.9'
+
+win_path = 'C:\\Users\petermogyoros\Documents\FTP_LN_HMI'
+linux_path = '/home/peter/csv/LN_HMI/fresh_csv'
+
 # Establish FTP Connection
 try:
-    ftp = FTP('127.1.1.9')  # connect to remote host
+    ftp = FTP(ip_linux)  # connect to remote host
     print(ftp.getwelcome())  # FTP Server returns a welcome message
 except:
     print("FTP Server not available. Please check connection!")
@@ -19,10 +26,10 @@ except:
     quit()
 
 
-def get_data() -> str:
+def get_data():
     ftp.cwd('/Project1/LOG00001')
     root_dir = ftp.nlst()
-    local_dir = '/home/peter/csv/LN_HMI/fresh_csv'
+    local_dir = linux_path  # win_path for testing and linux_path for production
     os.chdir(local_dir)
     pattern = '*.csv'  # choose search pattern
     for l in root_dir:
@@ -46,11 +53,11 @@ def get_data() -> str:
 
             # Delete after downloaded
             try:
-                ftp.delete(l)
+                #ftp.delete(l)
                 print("Now deleted from device!")
             except:
                 print("Could not delete file.")
                 break
 
 
-data = get_data()
+get_data()
