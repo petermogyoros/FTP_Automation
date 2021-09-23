@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="peter@104.248.173.145:22" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="peter@104.248.173.145:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/peter/csv/LN_HMI/FTP_Automation" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
