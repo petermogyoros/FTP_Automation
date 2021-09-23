@@ -7,7 +7,7 @@ ip_win = '192.168.3.99'
 ip_linux = '127.1.1.9'
 
 win_path = 'C:\\Users\petermogyoros\Documents\FTP_LN_HMI'
-linux_path = '//home//peter//csv//LN_HMI//fresh_csv//FTP_Automation'
+linux_path = '/home/peter/csv/LN_HMI/fresh_csv'
 
 # Establish FTP Connection
 try:
@@ -28,11 +28,12 @@ except:
 
 def get_data():
     ftp.cwd('/Project1/LOG00001')
-    root_dir = ftp.nlst()
     local_dir = linux_path  # win_path for testing and linux_path for production
     os.chdir(local_dir)
     pattern = '*.csv'  # choose search pattern
-    for l in root_dir:
+    print("before")
+    for l in ftp.nlst():
+        print("after")
         # only find files with the .csv extension
         if fnmatch.fnmatch(l, pattern):
 
