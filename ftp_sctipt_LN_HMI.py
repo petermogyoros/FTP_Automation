@@ -7,7 +7,7 @@ ip_win = '192.168.3.99'
 ip_linux = '127.1.1.9'
 
 win_path = 'C:\\Users\petermogyoros\Documents\FTP_LN_HMI'
-linux_path = '//home//peter//csv//LN_HMI//fresh_csv'
+linux_path = '//home//peter//csv//LN_HMI//fresh_csv//FTP_Automation'
 
 # Establish FTP Connection
 try:
